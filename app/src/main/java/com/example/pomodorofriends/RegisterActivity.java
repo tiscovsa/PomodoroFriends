@@ -80,10 +80,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void addUser(String name,String username, String email, String password) {
-
-
-
-
         progressBar.setVisibility(View.VISIBLE);
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(new Runnable() {
