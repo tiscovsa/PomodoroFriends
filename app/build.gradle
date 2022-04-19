@@ -2,8 +2,6 @@ plugins {
     id 'com.android.application'
 }
 
-apply plugin: 'realm-android'
-
 android {
 
     compileSdk 31
@@ -34,11 +32,6 @@ android {
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
     }
-}
-
-
-realm {
-    syncEnabled = true
 }
 
 dependencies {

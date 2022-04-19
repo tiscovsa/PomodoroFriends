@@ -15,9 +15,7 @@ import android.widget.Toast;
 
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
-import io.realm.Realm;
-import io.realm.mongodb.App;
-import io.realm.mongodb.AppConfiguration;
+
 
 public class RegisterActivity extends AppCompatActivity {
     Button register,cancel;
