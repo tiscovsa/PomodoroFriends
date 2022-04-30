@@ -19,7 +19,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class LoginActivity extends AppCompatActivity {
 
     Button register,login;
-    EditText inputEmail, inputPassword;
+    EditText inputUsername, inputPassword;
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         register = findViewById(R.id.btn_goto_register);
         progressBar = findViewById(R.id.progress);
 
-        inputEmail = findViewById(R.id.et_email);
+        inputUsername = findViewById(R.id.et_username);
         inputPassword = findViewById(R.id.et_password);
 
         register.setOnClickListener(v-> goToRegister());
@@ -38,11 +38,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void login() {
 
-        final String email,password;
-        email = String.valueOf(inputEmail.getText());
+        final String username,password;
+        username = String.valueOf(inputUsername.getText());
         password = String.valueOf(inputPassword.getText());
 
-        if(!email.equals("") && !password.equals("")) {
+        if(!username.equals("") && !password.equals("")) {
 
             progressBar.setVisibility(View.VISIBLE);
             Handler handler = new Handler(Looper.getMainLooper());
@@ -52,11 +52,11 @@ public class LoginActivity extends AppCompatActivity {
                     //Starting Write and Read data with URL
                     //Creating array for parameters
                     String[] field = new String[2];
-                    field[0] = "email";
+                    field[0] = "username";
                     field[1] = "password";
                     //Creating array for data
                     String[] data = new String[2];
-                    data[0] = email;
+                    data[0] = username;
                     data[1] = password;
                     PutData putData = new PutData("http://192.168.0.123/LoginRegister/login.php", "POST", field, data);
                     if (putData.startPut()) {
